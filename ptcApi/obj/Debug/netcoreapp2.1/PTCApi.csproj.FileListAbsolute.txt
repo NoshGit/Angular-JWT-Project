@@ -1,0 +1,14 @@
+D:\Noshir\Playground\Angular\Uploaded-Assignments\JWT-Project\Angular-JWT-Project\ptcApi\bin\Debug\netcoreapp2.1\PTCApi.deps.json
+D:\Noshir\Playground\Angular\Uploaded-Assignments\JWT-Project\Angular-JWT-Project\ptcApi\bin\Debug\netcoreapp2.1\PTCApi.runtimeconfig.json
+D:\Noshir\Playground\Angular\Uploaded-Assignments\JWT-Project\Angular-JWT-Project\ptcApi\bin\Debug\netcoreapp2.1\PTCApi.runtimeconfig.dev.json
+D:\Noshir\Playground\Angular\Uploaded-Assignments\JWT-Project\Angular-JWT-Project\ptcApi\bin\Debug\netcoreapp2.1\PTCApi.dll
+D:\Noshir\Playground\Angular\Uploaded-Assignments\JWT-Project\Angular-JWT-Project\ptcApi\bin\Debug\netcoreapp2.1\PTCApi.pdb
+D:\Noshir\Playground\Angular\Uploaded-Assignments\JWT-Project\Angular-JWT-Project\ptcApi\obj\Debug\netcoreapp2.1\PTCApi.csprojAssemblyReference.cache
+D:\Noshir\Playground\Angular\Uploaded-Assignments\JWT-Project\Angular-JWT-Project\ptcApi\obj\Debug\netcoreapp2.1\PTCApi.csproj.CoreCompileInputs.cache
+D:\Noshir\Playground\Angular\Uploaded-Assignments\JWT-Project\Angular-JWT-Project\ptcApi\obj\Debug\netcoreapp2.1\PTCApi.RazorAssemblyInfo.cache
+D:\Noshir\Playground\Angular\Uploaded-Assignments\JWT-Project\Angular-JWT-Project\ptcApi\obj\Debug\netcoreapp2.1\PTCApi.RazorAssemblyInfo.cs
+D:\Noshir\Playground\Angular\Uploaded-Assignments\JWT-Project\Angular-JWT-Project\ptcApi\obj\Debug\netcoreapp2.1\PTCApi.AssemblyInfoInputs.cache
+D:\Noshir\Playground\Angular\Uploaded-Assignments\JWT-Project\Angular-JWT-Project\ptcApi\obj\Debug\netcoreapp2.1\PTCApi.AssemblyInfo.cs
+D:\Noshir\Playground\Angular\Uploaded-Assignments\JWT-Project\Angular-JWT-Project\ptcApi\obj\Debug\netcoreapp2.1\PTCApi.RazorTargetAssemblyInfo.cache
+D:\Noshir\Playground\Angular\Uploaded-Assignments\JWT-Project\Angular-JWT-Project\ptcApi\obj\Debug\netcoreapp2.1\PTCApi.dll
+D:\Noshir\Playground\Angular\Uploaded-Assignments\JWT-Project\Angular-JWT-Project\ptcApi\obj\Debug\netcoreapp2.1\PTCApi.pdb

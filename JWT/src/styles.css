@@ -1,0 +1,18 @@
+/* You can add global styles to this file, and also import other style files */
+.body-content {
+  margin-top: 5em;
+}
+
+.login-welcome{
+  color: #fff;
+  padding-top: 15px;
+  text-transform: capitalize;
+}
+
+.noFloat{
+  float: none;
+}
+.mr-x-auto{
+  margin-left: auto;
+  margin-right: auto;
+}

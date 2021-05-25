@@ -1,0 +1,33 @@
+<nav class="navbar nav-justified navbar-fixed-top 
+            navbar-inverse" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <a routerLink="/dashboard" class="navbar-brand">
+        Home
+      </a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li>
+        <a routerLink="/products" *ngIf="this.userData.canAccessProducts">Products</a>
+      </li>
+      <li>
+        <a routerLink="/categories" *ngIf="this.userData.canAccessCategories">Categories</a>
+      </li>
+    </ul>
+
+    <ul class="nav navbar-nav navbar-right">
+      <li *ngIf="!userData.isAuthenticated">
+        <a routerLink="login">Login</a>
+      </li>
+      <li *ngIf="userData.isAuthenticated">
+        <p class="text-center login-welcome">Welcome! <span>{{userData.userName}}</span></p>
+      </li>
+      <li *ngIf="userData.isAuthenticated">        
+        <a href="" (click)="logout()">Logout</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div class="container body-content">
+  <router-outlet></router-outlet>
+</div>
