@@ -18,10 +18,10 @@ export class ProductService {
   constructor(private http: HttpClient, private securityService: SecurityService) { }
 
   getProducts(): Observable<Product[]> {
-    let httpOptions = new HttpHeaders()
+    let headOptions = new HttpHeaders()
     .set('Authorization', 'Bearer ' +  this.securityService.securityObject.bearerToken);
 
-    return this.http.get<Product[]>(API_URL, {headers: httpOptions});
+    return this.http.get<Product[]>(API_URL, {headers: headOptions});
   }
 
   getProduct(id: number): Observable<Product> {
