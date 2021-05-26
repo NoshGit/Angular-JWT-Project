@@ -10,10 +10,11 @@ using Microsoft.AspNetCore.Authorization;
 namespace PtcApi.Controllers
 {
   [Route("api/[controller]")]
+  [Authorize]
   public class ProductController : BaseApiController
   {
     [HttpGet]
-    [Authorize]
+    
     public IActionResult Get()
     {
       IActionResult ret = null;

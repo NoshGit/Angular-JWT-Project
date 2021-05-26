@@ -3,7 +3,6 @@ import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { Product } from './product';
-import { SecurityService } from '../security/security.service';
 
 const API_URL = "http://localhost:5000/api/product/";
 const httpOptions = {
@@ -15,13 +14,10 @@ const httpOptions = {
 @Injectable()
 export class ProductService {
 
-  constructor(private http: HttpClient, private securityService: SecurityService) { }
+  constructor(private http: HttpClient) { }
 
   getProducts(): Observable<Product[]> {
-    let headOptions = new HttpHeaders()
-    .set('Authorization', 'Bearer ' +  this.securityService.securityObject.bearerToken);
-
-    return this.http.get<Product[]>(API_URL, {headers: headOptions});
+    return this.http.get<Product[]>(API_URL);
   }
 
   getProduct(id: number): Observable<Product> {

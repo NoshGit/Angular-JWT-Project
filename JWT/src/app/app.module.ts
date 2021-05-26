@@ -12,6 +12,7 @@ import { CategoryListComponent } from './category/category-list.component';
 import { AppRoutingModule } from './app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
+import { HttpInterceptorModule } from './security/http-interceptor.module';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { LoginComponent } from './login/login.component';
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpInterceptorModule
   ],
   providers: [ProductService, CategoryService],
   bootstrap: [AppComponent]
