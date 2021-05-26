@@ -14,7 +14,7 @@ namespace PtcApi.Controllers
   public class ProductController : BaseApiController
   {
     [HttpGet]
-    
+    [Authorize(Policy = "CanAccessProducts")]
     public IActionResult Get()
     {
       IActionResult ret = null;

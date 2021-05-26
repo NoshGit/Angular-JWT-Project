@@ -59,6 +59,10 @@ namespace PTCApi
             };
         });
 
+        services.AddAuthorization(cfg =>{
+          cfg.AddPolicy("CanAccessProducts", p => p.RequireClaim("canAccessProduct", "true"));
+        });
+
       services.AddCors();
 
       services.AddMvc()
