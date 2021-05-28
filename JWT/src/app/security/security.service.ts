@@ -51,9 +51,30 @@ export class SecurityService {
 
     localStorage.removeItem('bearerToken');
   }
+  // This method can be called a couple of different ways
+  // *hasClaim="'claimType'" Assumes Claim value as True
+  // *hasClaim="'claimType:value'" // Compares ClaimValue to Value
+  // *hasClaim="['claimType', 'claimType2:value', 'claimType3']"
+  hasClaim(claimType: string, claimValue?: string) {
+    let retFlag: boolean = false;
 
-  hasClaim(claimType: any, claimValue?: any) {
-    return this.isClaimValid(claimType, claimValue);
+    // Check is passed value is Array or String.
+    if(typeof claimType === "string"){
+      retFlag = this.isClaimValid(claimType, claimValue);
+    }
+    else{
+      let claims: string[] = claimType;
+      if(claims){
+        for(let i = 0; i < claims.length; i++){
+          retFlag = this.isClaimValid(claims[i]);
+          // If any one conditiom is successful let user in.
+          if(retFlag){
+            break;
+          }
+        }
+      }
+    }
+    return retFlag;
   }
 
   private isClaimValid(claimType: string, claimValue?: string): boolean {

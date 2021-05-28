@@ -25,9 +25,9 @@ export class LoginComponent implements OnInit {
         this.securityObject = data;
         if(this.returnUrl){
           this.router.navigateByUrl(this.returnUrl);
-        }/*else{
+        }else{
           this.router.navigate(['/dashboard']);
-        }*/
+        }
       },
       () => {
         // Initialized Security Object to Display Error Message on Screen.

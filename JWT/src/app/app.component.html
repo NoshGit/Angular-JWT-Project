@@ -2,19 +2,19 @@
             navbar-inverse" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <a routerLink="/dashboard" class="navbar-brand">
+      <a routerLink="/dashboard" routerLinkActive="active" class="navbar-brand">
         Home
       </a>
     </div>
     <ul class="nav navbar-nav">
       <li>
         <ng-container *ngIf="userData.isAuthenticated">
-          <a routerLink="/products" *hasClaims="'canaccessproducts'">Products</a>
+          <a routerLink="/products" routerLinkActive="active" *hasClaims="'canaccessproducts'">Products</a>
         </ng-container>
       </li>
       <li>
         <ng-container *ngIf="userData.isAuthenticated">
-          <a routerLink="/categories" *hasClaims="'canaccesscategories'">Categories</a>
+          <a routerLink="/categories" routerLinkActive="active" *hasClaims="'canaccesscategories'">Categories</a>
         </ng-container>
       </li>
     </ul>

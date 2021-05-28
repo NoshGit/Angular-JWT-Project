@@ -1,8 +1,6 @@
 import { normalizeGenFileSuffix } from '@angular/compiler/src/aot/util';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AppUserAuth } from '../security/app-user-auth';
-import { SecurityService } from '../security/security.service';
 
 import { Product } from './product';
 import { ProductService } from './product.service';
@@ -12,11 +10,8 @@ import { ProductService } from './product.service';
 })
 export class ProductListComponent implements OnInit {
   products: Product[];
-  securedObject: AppUserAuth = null;
   constructor(private productService: ProductService,
-    private router: Router,
-    private securityService:SecurityService) {
-      this.securedObject = securityService.securityObject
+    private router: Router) {
      }
 
   ngOnInit() {
