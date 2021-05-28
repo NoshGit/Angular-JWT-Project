@@ -8,10 +8,14 @@
     </div>
     <ul class="nav navbar-nav">
       <li>
-        <a routerLink="/products" *ngIf="this.userData.canAccessProducts">Products</a>
+        <ng-container *ngIf="userData.isAuthenticated">
+          <a routerLink="/products" *hasClaims="'canaccessproducts'">Products</a>
+        </ng-container>
       </li>
       <li>
-        <a routerLink="/categories" *ngIf="this.userData.canAccessCategories">Categories</a>
+        <ng-container *ngIf="userData.isAuthenticated">
+          <a routerLink="/categories" *hasClaims="'canaccesscategories'">Categories</a>
+        </ng-container>
       </li>
     </ul>
 

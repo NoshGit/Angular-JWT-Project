@@ -13,6 +13,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
 import { HttpInterceptorModule } from './security/http-interceptor.module';
+import { HasClaimsDirective } from './security/has-claims.directive';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { HttpInterceptorModule } from './security/http-interceptor.module';
     ProductDetailComponent,
     CategoryListComponent,
     DashboardComponent,
-    LoginComponent
+    LoginComponent,
+    HasClaimsDirective
   ],
   imports: [
     BrowserModule,

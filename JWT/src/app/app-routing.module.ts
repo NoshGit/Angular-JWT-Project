@@ -19,7 +19,9 @@ const routes: Routes = [
   },
   { 
     path: 'products', 
-    component: ProductListComponent
+    component: ProductListComponent,
+    canActivate: [AuthGuard],
+    data: {claimType: 'canAccessProducts'}
   },
   { 
     path: 'productDetail/:id', 

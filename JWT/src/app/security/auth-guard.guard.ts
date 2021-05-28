@@ -17,7 +17,7 @@ export class AuthGuard implements CanActivate {
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
 
     let claimType: string = next.data["claimType"]
-    if(this.securityService.securityObject.isAuthenticated && this.securityService.securityObject[claimType]){
+    if(this.securityService.securityObject.isAuthenticated && this.securityService.hasClaim(claimType)){
       return true;
     }else{
       this.router.navigate(['login'],{

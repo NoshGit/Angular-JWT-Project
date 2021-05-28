@@ -1,10 +1,8 @@
+import { AppUserClaim } from "./app-user-claim";
+
 export class AppUserAuth {
-    userName: string
-    bearerToken: string
-    isAuthenticated: boolean
-    canAccessProducts: boolean
-    canAddProduct: boolean
-    canSaveProduct: boolean
-    canAccessCategories: boolean
-    canAddCategory: boolean
+    userName: string = "";
+    bearerToken: string = "";
+    isAuthenticated: boolean = false;
+    claims: AppUserClaim[] = [];
 }

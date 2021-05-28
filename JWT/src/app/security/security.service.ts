@@ -47,13 +47,40 @@ export class SecurityService {
     this.securityObject.userName = "";
     this.securityObject.bearerToken = "";
     this.securityObject.isAuthenticated = false;
-    this.securityObject.canSaveProduct = false;    
-    this.securityObject.canAddProduct = false;
-    this.securityObject.canAccessProducts = false;
-    this.securityObject.canAddCategory = false;
-    this.securityObject.canAccessCategories = false;
+    this.securityObject.claims = [];
 
     localStorage.removeItem('bearerToken');
+  }
+
+  hasClaim(claimType: any, claimValue?: any) {
+    return this.isClaimValid(claimType, claimValue);
+  }
+
+  private isClaimValid(claimType: string, claimValue?: string): boolean {
+    let retVal: boolean = false;
+    
+    // Retrieve Security Object
+    let auth: AppUserAuth = this.securityObject;
+
+    if(auth){
+      //See if claim type has a value
+      // *hasValue="'claimType:value'"
+      if(claimType.indexOf(':') >= 0){
+        let words: string[] = claimType.split(':');
+        claimType = words[0].toLowerCase();
+        claimValue = words[1];
+      }else{
+        claimType = claimType.toLowerCase();
+        //Either get the claim value, or assume 'true'
+        claimValue = claimValue? claimValue : "true";
+      }
+
+      // Attempt to find the claim
+      retVal =  auth.claims.find(c => 
+        c.claimType.toLowerCase() === claimType && c.claimValue === claimValue) !== null;
+    }
+
+    return retVal;
   }
 
   logout(): void {
