@@ -4,6 +4,7 @@ import { tap } from 'rxjs/operators';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { AppUser } from './app-user';
 import { AppUserAuth } from './app-user-auth';
+import * as _  from 'lodash';
 //import { LOGIN_MOCKS } from './login-mocks';
 
 const API_URL = "http://localhost:5000/api/security/";
@@ -19,11 +20,12 @@ const httpOptions = {
 })
 
 export class SecurityService {
-  securityObject: AppUserAuth = new AppUserAuth();
+  authUser = JSON.parse(localStorage.getItem("authUser"));
+  securityObject: AppUserAuth = (this.authUser && this.authUser.bearerToken)? _.cloneDeep(this.authUser) : new AppUserAuth();
+  
 
   constructor(private http: HttpClient) { }
-
-  
+ 
 
   login(entity:AppUser): Observable<AppUserAuth>{
     //Initialize Security Object
@@ -38,7 +40,7 @@ export class SecurityService {
         Object.assign(this.securityObject, data);
 
         //store token in local storage
-        localStorage.setItem('bearerToken', this.securityObject.bearerToken);
+        localStorage.setItem('authUser', JSON.stringify(this.securityObject));
       })
     )
   }
@@ -49,7 +51,7 @@ export class SecurityService {
     this.securityObject.isAuthenticated = false;
     this.securityObject.claims = [];
 
-    localStorage.removeItem('bearerToken');
+    localStorage.removeItem('authUser');
   }
   // This method can be called a couple of different ways
   // *hasClaim="'claimType'" Assumes Claim value as True

@@ -18,5 +18,11 @@ namespace PtcApi.Model
         [Required()]
         [StringLength(255)]
         public string Password {get; set;}
+
+        [StringLength(255)]
+        public string FirstName {get; set;}
+        
+        [StringLength(255)]
+        public string LastName {get; set;}
     }
 }

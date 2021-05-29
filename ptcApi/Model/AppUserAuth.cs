@@ -11,6 +11,9 @@ namespace PtcApi.Model
         }
 
         public string UserName {get; set;}
+
+        public string FirstName {get; set;}
+        public string LastName {get; set;}
         public string BearerToken {get; set;}
         public bool IsAuthenticated {get; set;}
         public List<AppUserClaim> Claims {get; set;}

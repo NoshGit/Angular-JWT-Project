@@ -92,6 +92,8 @@ namespace PtcApi.Security
 
             // Set User Properties
             ret.UserName = authUser.UserName;
+            ret.FirstName = authUser.FirstName;
+            ret.LastName = authUser.LastName;
             ret.IsAuthenticated = true;
             ret.BearerToken = new Guid().ToString();
 

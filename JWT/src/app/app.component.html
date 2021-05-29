@@ -24,7 +24,7 @@
         <a routerLink="login">Login</a>
       </li>
       <li *ngIf="userData.isAuthenticated">
-        <p class="text-center login-welcome">Welcome! <span>{{userData.userName}}</span></p>
+        <p class="text-center login-welcome">Welcome <span>{{userData.firstName}} !</span></p>
       </li>
       <li *ngIf="userData.isAuthenticated">        
         <a href="" (click)="logout()">Logout</a>
